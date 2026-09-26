@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>直流电路网表求解器</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <h1>直流电路网表求解器</h1>
+    <p class="hint">
+      每行一个元件：<code>名称 起点 终点 数值</code>。
+      <code>R</code> 开头为电阻（Ω，须为正），<code>V</code> 开头为理想电压源（V，起点电位 − 终点电位 = 数值），
+      <code>I</code> 开头为理想电流源（A，正方向：起点 → 终点）。
+      节点 0 为地；空行与 <code>#</code> 开头的行为注释。
+      最多 12 个非接地节点、30 个元件。
+    </p>
+
+    <textarea id="netlist" rows="12" spellcheck="false"
+      placeholder="例如：&#10;V1 1 0 10&#10;R1 1 2 1000&#10;R2 2 0 2000"></textarea>
+
+    <div class="toolbar">
+      <button id="solve-btn">求解</button>
+      <button id="example-btn" type="button">填入示例</button>
+      <button id="clear-btn" type="button">清空</button>
+    </div>
+
+    <div id="error" class="error" hidden></div>
+
+    <section id="results" hidden>
+      <h2>节点电压</h2>
+      <table id="node-table">
+        <thead><tr><th>节点</th><th>电压 (V)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <h2>元件电流（正方向：起点 → 终点）</h2>
+      <table id="elem-table">
+        <thead><tr><th>元件</th><th>类型</th><th>起点</th><th>终点</th><th>数值</th><th>电流 (A)</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

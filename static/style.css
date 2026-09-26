@@ -1,0 +1,103 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 { font-size: 1.5rem; margin: 8px 0 12px; }
+h2 { font-size: 1.1rem; margin: 24px 0 8px; }
+
+.hint {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #555;
+  background: #fff;
+  border: 1px solid #e0e4e8;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+code {
+  background: #eef1f4;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: "SFMono-Regular", Consolas, monospace;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border: 1px solid #c9d1d9;
+  border-radius: 8px;
+  resize: vertical;
+  background: #fff;
+}
+
+textarea:focus { outline: 2px solid #4a90d9; outline-offset: -1px; }
+
+.toolbar { margin: 12px 0; display: flex; gap: 8px; }
+
+button {
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  border: 1px solid #c9d1d9;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:hover { background: #f0f3f6; }
+
+#solve-btn {
+  background: #2f6fd0;
+  border-color: #2f6fd0;
+  color: #fff;
+  font-weight: 600;
+}
+
+#solve-btn:hover { background: #2a63b8; }
+#solve-btn:disabled { opacity: 0.6; cursor: wait; }
+
+.error {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: #fdecea;
+  border: 1px solid #f5c6c0;
+  border-left: 4px solid #d93025;
+  border-radius: 6px;
+  color: #a50e0e;
+  white-space: pre-wrap;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #e0e4e8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 8px 14px;
+  text-align: left;
+  border-bottom: 1px solid #eef1f4;
+  font-variant-numeric: tabular-nums;
+}
+
+th { background: #f0f3f6; font-weight: 600; }
+tbody tr:last-child td { border-bottom: none; }
+td:first-child { font-family: Consolas, monospace; }
